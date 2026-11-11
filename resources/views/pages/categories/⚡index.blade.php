@@ -12,7 +12,7 @@ new class extends Component {
     #[Computed]
     public function categories(): LengthAwarePaginator
     {
-        return Category::latest()->withCount('products')->paginate(5);
+        return Category::latest()->orderByDesc('id')->withCount('products')->paginate(5);
     }
 };
 ?>
@@ -34,7 +34,7 @@ new class extends Component {
                 </flux:table.row>
             @empty
                 <flux:table.row>
-                    <flux:table.cell>No categories found.</flux:table.cell>
+                    <flux:table.cell colspan="3">No categories found.</flux:table.cell>
                 </flux:table.row>
             @endforelse
         </flux:table.rows>
