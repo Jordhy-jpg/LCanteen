@@ -26,9 +26,9 @@
         </flux:sidebar.header>
         <flux:sidebar.search placeholder="Search..." />
         <flux:sidebar.nav>
-            <flux:sidebar.item icon="home" :href="route('categories.index')"
+            <flux:sidebar.item icon="squares-2x2" :href="route('categories.index')"
                 :current="request()->routeIs('categories.*')" wire:navigate>Categories</flux:sidebar.item>
-            <flux:sidebar.item icon="inbox" badge="12" :href="route('products.index')"
+            <flux:sidebar.item icon="utensils" badge="12" :href="route('products.index')"
                 :current="request()->routeIs('products.*')" wire:navigate>Products</flux:sidebar.item>
             <flux:sidebar.item icon="document-text" href="#">Documents</flux:sidebar.item>
             <flux:sidebar.item icon="calendar" href="#">Calendar</flux:sidebar.item>
