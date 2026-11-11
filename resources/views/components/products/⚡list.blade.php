@@ -37,7 +37,11 @@ new class extends Component {
             @forelse($this->products as $product)
                 <flux:table.row wire:key="product-{{ $product->id }}" class="whitespace-normal wrap-break-word">
                     <flux:table.cell>{{ $product->name }}</flux:table.cell>
-                    <flux:table.cell>{{ $product->category->name }}</flux:table.cell>
+                    <flux:table.cell>
+                        <flux:link :href="route('categories.show', $product->category)" variant="subtle" wire:navigate>
+                            {{ $product->category->name }}
+                        </flux:link>
+                    </flux:table.cell>
                     <flux:table.cell>{{ $product->description }}</flux:table.cell>
                     <flux:table.cell>${{ $product->price }}</flux:table.cell>
                     <flux:table.cell>{{ $product->stock }}</flux:table.cell>
