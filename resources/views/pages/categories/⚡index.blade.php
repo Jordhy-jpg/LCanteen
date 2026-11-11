@@ -18,16 +18,16 @@ new class extends Component {
 ?>
 
 <div>
-    <flux:table :paginate="$this->categories">
+    <flux:table :paginate="$this->categories" class="w-full">
         <flux:table.columns>
-            <flux:table.column>Category</flux:table.column>
-            <flux:table.column>Description</flux:table.column>
-            <flux:table.column>Products</flux:table.column>
+            <flux:table.column class="w-1/5">Category</flux:table.column>
+            <flux:table.column class="w-3/5">Description</flux:table.column>
+            <flux:table.column class="w-1/5">Products</flux:table.column>
         </flux:table.columns>
 
         <flux:table.rows>
             @forelse($this->categories as $category)
-                <flux:table.row>
+                <flux:table.row wire:key="category-{{ $category->id }}" class="whitespace-normal wrap-break-word">
                     <flux:table.cell>{{ $category->name }}</flux:table.cell>
                     <flux:table.cell>{{ $category->description }}</flux:table.cell>
                     <flux:table.cell>{{ $category->products_count }}</flux:table.cell>
