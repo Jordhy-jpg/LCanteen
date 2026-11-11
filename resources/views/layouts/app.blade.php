@@ -7,6 +7,10 @@
 
     <title>{{ $title ?? config('app.name') }}</title>
 
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @livewireStyles
@@ -17,8 +21,7 @@
     <flux:sidebar sticky collapsible="mobile"
         class="bg-zinc-50 dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-700">
         <flux:sidebar.header>
-            <flux:sidebar.brand href="#" logo="https://fluxui.dev/img/demo/logo.png"
-                logo:dark="https://fluxui.dev/img/demo/dark-mode-logo.png" name="Acme Inc." />
+            <flux:sidebar.brand href="#" logo="/favicon.svg" name="LCanteen" />
             <flux:sidebar.collapse class="lg:hidden" />
         </flux:sidebar.header>
         <flux:sidebar.search placeholder="Search..." />
