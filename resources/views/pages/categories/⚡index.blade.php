@@ -28,7 +28,11 @@ new class extends Component {
         <flux:table.rows>
             @forelse($this->categories as $category)
                 <flux:table.row wire:key="category-{{ $category->id }}" class="whitespace-normal wrap-break-word">
-                    <flux:table.cell>{{ $category->name }}</flux:table.cell>
+                    <flux:table.cell>
+                        <flux:link :href="route('categories.show', $category)" variant="subtle" wire:navigate>
+                            {{ $category->name }}
+                        </flux:link>
+                    </flux:table.cell>
                     <flux:table.cell>{{ $category->description }}</flux:table.cell>
                     <flux:table.cell>{{ $category->products_count }}</flux:table.cell>
                 </flux:table.row>
