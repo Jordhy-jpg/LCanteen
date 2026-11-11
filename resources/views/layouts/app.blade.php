@@ -30,13 +30,11 @@
                 :current="request()->routeIs('categories.*')" wire:navigate>Categories</flux:sidebar.item>
             <flux:sidebar.item icon="utensils" :href="route('products.index')"
                 :current="request()->routeIs('products.*', 'details.*')" wire:navigate>Products</flux:sidebar.item>
-            <flux:sidebar.item icon="document-text" href="#">Documents</flux:sidebar.item>
-            <flux:sidebar.item icon="calendar" href="#">Calendar</flux:sidebar.item>
-            <flux:sidebar.group expandable heading="Favorites" class="grid">
+            {{-- <flux:sidebar.group expandable heading="Favorites" class="grid">
                 <flux:sidebar.item href="#">Marketing site</flux:sidebar.item>
                 <flux:sidebar.item href="#">Android app</flux:sidebar.item>
                 <flux:sidebar.item href="#">Brand guidelines</flux:sidebar.item>
-            </flux:sidebar.group>
+            </flux:sidebar.group> --}}
         </flux:sidebar.nav>
         <flux:sidebar.spacer />
         <flux:sidebar.nav>
