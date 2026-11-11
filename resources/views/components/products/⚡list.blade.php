@@ -42,9 +42,14 @@ new class extends Component {
                         </flux:link>
                     </flux:table.cell>
                     <flux:table.cell>
-                        <flux:link :href="route('categories.show', $product->category)" variant="subtle" wire:navigate>
+                        @if (request()->routeIs('categories.*'))
                             {{ $product->category->name }}
-                        </flux:link>
+                        @else
+                            <flux:link :href="route('categories.show', $product->category)" variant="subtle"
+                                wire:navigate>
+                                {{ $product->category->name }}
+                            </flux:link>
+                        @endif
                     </flux:table.cell>
                     <flux:table.cell>{{ $product->description }}</flux:table.cell>
                     <flux:table.cell>${{ $product->price }}</flux:table.cell>
