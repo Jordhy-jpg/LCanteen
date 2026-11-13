@@ -36,6 +36,40 @@
                 <flux:sidebar.item href="#">Brand guidelines</flux:sidebar.item>
             </flux:sidebar.group> --}}
         </flux:sidebar.nav>
+        <flux:modal.trigger name="add-item">
+            <flux:button>Add Item</flux:button>
+        </flux:modal.trigger>
+
+        <flux:modal name="add-item" class="w-full max-w-2xl">
+            <div class="space-y-6">
+                {{-- <div>
+                    <flux:heading size="lg">Add Item</flux:heading>
+                </div> --}}
+                <div x-data="{ tab: 'add_category' }">
+                    <div role="group" aria-label="Choose item type">
+                        <flux:button type="button" x-on:click="tab = 'add_category'"
+                            x-bind:aria-pressed="tab === 'add_category'"
+                            class="mb-4 aria-pressed:bg-zinc-900! aria-pressed:text-white! dark:aria-pressed:bg-white! dark:aria-pressed:text-zinc-900!">
+                            Add Category
+                        </flux:button>
+
+                        <flux:button type="button" x-on:click="tab = 'add_product'"
+                            x-bind:aria-pressed="tab === 'add_product'"
+                            class="mb-4 aria-pressed:bg-zinc-900! aria-pressed:text-white! dark:aria-pressed:bg-white! dark:aria-pressed:text-zinc-900!">
+                            Add Product
+                        </flux:button>
+                    </div>
+
+                    <div x-show="tab === 'add_category'">
+                        <livewire:categories.create />
+                    </div>
+
+                    <div x-show="tab === 'add_product'" x-cloak>
+                        <livewire:products.create />
+                    </div>
+                </div>
+            </div>
+        </flux:modal>
         <flux:sidebar.spacer />
         <flux:sidebar.nav>
             <flux:sidebar.item icon="cog-6-tooth" href="#">Settings</flux:sidebar.item>
@@ -72,7 +106,6 @@
         {{ $slot }}
 
         @livewireScripts
-        @fluxScripts
     </flux:main>
     @fluxScripts
 </body>
