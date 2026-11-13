@@ -26,11 +26,11 @@ new class extends Component {
 <div>
     <flux:table :paginate="$this->products" class="w-full">
         <flux:table.columns>
-            <flux:table.column class="w-1/10">Product</flux:table.column>
-            <flux:table.column class="w-1/10">Category</flux:table.column>
-            <flux:table.column class="w-3/5">Description</flux:table.column>
-            <flux:table.column class="w-1/10">Price</flux:table.column>
-            <flux:table.column class="w-1/10">Stock</flux:table.column>
+            <flux:table.column class="w-1/10"><flux:text size="lg" variant="strong">Product</flux:text></flux:table.column>
+            <flux:table.column class="w-1/10"><flux:text size="lg" variant="strong">Category</flux:text></flux:table.column>
+            <flux:table.column class="w-3/5"><flux:text size="lg" variant="strong">Description</flux:text></flux:table.column>
+            <flux:table.column class="w-1/10"><flux:text size="lg" variant="strong">Price</flux:text></flux:table.column>
+            <flux:table.column class="w-1/10"><flux:text size="lg" variant="strong">Stock</flux:text></flux:table.column>
         </flux:table.columns>
 
         <flux:table.rows>

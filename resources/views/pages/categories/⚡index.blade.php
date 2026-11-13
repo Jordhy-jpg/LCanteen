@@ -20,9 +20,9 @@ new class extends Component {
 <div>
     <flux:table :paginate="$this->categories" class="w-full">
         <flux:table.columns>
-            <flux:table.column class="w-1/5">Category</flux:table.column>
-            <flux:table.column class="w-3/5">Description</flux:table.column>
-            <flux:table.column class="w-1/5">Products</flux:table.column>
+            <flux:table.column class="w-1/5"><flux:text size="lg" variant="strong">Category</flux:text></flux:table.column>
+            <flux:table.column class="w-3/5"><flux:text size="lg" variant="strong">Description</flux:text></flux:table.column>
+            <flux:table.column class="w-1/5"><flux:text size="lg" variant="strong">Products</flux:text></flux:table.column>
         </flux:table.columns>
 
         <flux:table.rows>
